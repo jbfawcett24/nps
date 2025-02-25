@@ -17,7 +17,7 @@ const park = {
         extension: "",
         type: "Voice"
       },
-      {
+      { 
         phoneNumber: "307-344-2014",
         description: "",
         extension: "",
