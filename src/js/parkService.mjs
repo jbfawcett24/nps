@@ -178,7 +178,7 @@ const park = {
   name: "Yellowstone",
   designation: "National Park"
 };
-
+const parkcode = "glac";
 const parkInfoLinks = [
   {
     name: "Current Conditions &#x203A;",
@@ -210,7 +210,7 @@ export async function getParkData() {
     }
   };
   let data = {};
-  const response = await fetch(baseUrl + "parks" + "?parkCode=glac", options);
+  const response = await fetch(baseUrl + "parks" + `?parkCode=${parkcode}`, options);
   // check to make sure the reponse was ok.
   if (response.ok) {
     // convert to JSON
@@ -230,4 +230,38 @@ export function getInfoLinks(data) {
   return item;
     });
   return newImages;
+}
+export async function getAlerts(){
+  const options = {
+    method: "GET",
+    headers: {
+      "X-Api-Key": apiKey
+    }
+  };
+  let data = {};
+  const response = await fetch(baseUrl + "alerts" + `?parkCode=${parkcode}`, options);
+  // check to make sure the reponse was ok.
+  if (response.ok) {
+    // convert to JSON
+    data = await response.json();
+  } else throw new Error("response not ok");
+  return data.data;
+}
+
+export async function getVisitorData()
+{
+  const options = {
+    method: "GET",
+    headers: {
+      "X-Api-Key": apiKey
+    }
+  };
+  let data = {};
+  const response = await fetch(baseUrl + "visitorcenters" + `?parkCode=${parkcode}`, options);
+  // check to make sure the reponse was ok.
+  if (response.ok) {
+    // convert to JSON
+    data = await response.json();
+  } else throw new Error("response not ok");
+  return data.data;
 }

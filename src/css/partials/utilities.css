@@ -12,7 +12,6 @@
 }
 
 svg {
-    background-color: var(--bs-black);
     fill: white;
 }
 
@@ -54,4 +53,16 @@ svg {
     align-items: center;
     text-transform: uppercase;
     border-left: 1px solid var(--bs-grey-5);
+}
+.alert-information {
+    color: var(--alert-information);
+}
+.alert-danger {
+    color: var(--alert-danger);
+}
+.alert-closure {
+    color: var(--alert-closure);
+}
+.alert-caution {
+    color: var(--alert-caution);
 }
