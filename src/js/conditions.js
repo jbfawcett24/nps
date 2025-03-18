@@ -21,7 +21,7 @@ function setActivities(activities) {
     const activitiesContainer = document.querySelector(".activities ul");
     activitiesContainer.innerHTML = "";
     const html = activities.map((activity) => {
-        return `<li><p>${activity}</p></li>`
+        return `<li><p>${activity}</p></li>`;
     });
     console.log(html);
     activitiesContainer.innerHTML = html.join("");
@@ -31,12 +31,12 @@ async function init() {
     //console.log(parkData.activities);
     const alerts = await getAlerts(parkData.parkCode);
     const centers = await getVisitorData();
-    const activities = parkData.activities.map((activity) => {return activity.name});
+    const activities = parkData.activities.map((activity) => {return activity.name;});
     console.log(activities);
     setHeaderFooter(parkData);
     setAlerts(alerts);
-    setVisitorCenter(centers)
-    setActivities(activities)
+    setVisitorCenter(centers);
+    setActivities(activities);
 }
 
 init();
