@@ -98,6 +98,43 @@
     display: flex;
 }
 
+@media (min-width: 768px) {
+    
+    .global-nav > h2 {
+        display: none;
+    }
+    .global-nav__submenu,
+    .global-nav__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .global-nav__split-button {
+        background-color: inherit;
+    }
+    .global-nav__split-button > button {
+        display: none;
+    }
+    .global-nav__submenu {
+        display: flex;
+        flex-direction: column;
+        max-height: fit-content;
+    }
+    .global-nav__submenu a {
+        padding: 0.625rem;
+    }
+    .global-nav .show {
+        max-height: 1000px;
+    }
+    .show {
+        max-height: 1000px;
+    }
+}
+
 .global-nav.show {
+    max-height: 1000px;
+}
+
+.show {
     max-height: 1000px;
 }
